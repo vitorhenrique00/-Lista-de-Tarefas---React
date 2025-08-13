@@ -39,4 +39,4 @@ Um projeto simples desenvolvido em **React** para demonstrar conceitos essenciai
    ```
 
 ---
-Feito com ❤️ para aprendizado e prática!
+Feito para aprendizado e prática!
