@@ -2,7 +2,7 @@
 
 Um projeto simples desenvolvido em **React** para demonstrar conceitos essenciais de desenvolvimento web.
 
-## 🛠 Especificações Técnicas Obrigatórias
+## 🛠 Especificações Técnicas 
 - Gerenciamento de Estado (`useState`)
 - Componentização
 - Uso de **Props**
