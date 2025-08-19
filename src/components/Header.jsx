@@ -1,5 +1,17 @@
-import React from "react";
+// src/components/Header.jsx
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
-export default function Header({ title }) {
-  return <h1 style={{ textAlign: "center" }}>{title}</h1>;
+function Header() {
+  return (
+    <header>
+      <img src={logo} alt="Logo do App" />
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">Sobre</Link>
+      </nav>
+    </header>
+  );
 }
+
+export default Header;
