@@ -1,20 +1,42 @@
 // src/pages/Home.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Home() {
   const [tasks, setTasks] = useState([]);
   const [input, setInput] = useState("");
 
+  // Carrega tarefas do localStorage
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    setTasks(savedTasks);
+  }, []);
+
+  // Salva tarefas no localStorage
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const addTask = () => {
     if (input.trim()) {
-      setTasks([...tasks, { text: input, completed: false }]);
+      setTasks([
+        ...tasks,
+        { text: input, completed: false, completedAt: null },
+      ]);
       setInput("");
     }
   };
 
-  const toggleComplete = (index) => {
+  const completeTask = (index) => {
     const newTasks = [...tasks];
-    newTasks[index].completed = !newTasks[index].completed;
+    newTasks[index].completed = true;
+    newTasks[index].completedAt = new Date().toLocaleString();
+    setTasks(newTasks);
+  };
+
+  const undoTask = (index) => {
+    const newTasks = [...tasks];
+    newTasks[index].completed = false;
+    newTasks[index].completedAt = null;
     setTasks(newTasks);
   };
 
@@ -34,16 +56,34 @@ function Home() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Digite sua tarefa"
         />
-        <button onClick={addTask}>Adicionar</button>
+        <button className="add" onClick={addTask}>
+          Adicionar
+        </button>
       </div>
       <ul className="task-list">
         {tasks.map((task, index) => (
-          <li
-            key={index}
-            className={task.completed ? "completed" : ""}
-          >
-            <span onClick={() => toggleComplete(index)}>{task.text}</span>
-            <button onClick={() => removeTask(index)}>❌</button>
+          <li key={index} className={task.completed ? "completed" : ""}>
+            <span>{task.text}</span>
+            <div className="button-group">
+              {!task.completed && (
+                <button className="complete" onClick={() => completeTask(index)}>
+                  ✔️
+                </button>
+              )}
+              {task.completed && (
+                <button className="undo" onClick={() => undoTask(index)}>
+                  ↩️
+                </button>
+              )}
+              <button className="delete" onClick={() => removeTask(index)}>
+                ❌
+              </button>
+            </div>
+            {task.completed && (
+              <div style={{ fontSize: "12px", color: "#555", marginTop: "4px" }}>
+                Concluída em: {task.completedAt}
+              </div>
+            )}
           </li>
         ))}
       </ul>

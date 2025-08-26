@@ -1,21 +1,33 @@
 // src/App.jsx
-import "./App.css";
-import Header from "./components/Header";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sobre from "./pages/Sobre";
+import logo from "./assets/logo.png"; // ajuste o nome do arquivo se for diferente
+import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
+    <Router>
+      <header>
+        <img src={logo} alt="Logo" height="50" />
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/sobre">Sobre</Link>
+        </nav>
+      </header>
+
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/sobre" element={<Sobre />} />
         </Routes>
       </main>
-    </BrowserRouter>
+
+      <footer>
+        © 2025 Meu App
+      </footer>
+    </Router>
   );
 }
 

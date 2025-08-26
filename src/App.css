@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -79,11 +79,27 @@ button:hover {
   transform: scale(1.05);
 }
 
+button.add {
+  background-color: #4caf50;
+}
+
+button.complete {
+  background-color: #4caf50;
+}
+
+button.undo {
+  background-color: #ffc107;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
 /* Lista de tarefas */
 .task-list {
   margin-top: 30px;
   list-style: none;
-  max-width: 400px;
+  max-width: 500px;
   margin-left: auto;
   margin-right: auto;
   padding: 0;
@@ -97,11 +113,22 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: 0.2s;
 }
 
-.task-list li.completed {
+.task-list li:hover {
+  background-color: #e9f4ff;
+}
+
+.task-list li.completed span {
   text-decoration: line-through;
-  opacity: 0.6;
+  color: #777;
+}
+
+.task-list li em {
+  font-size: 0.8rem;
+  color: #555;
+  margin-left: 8px;
 }
 
 /* Footer */
@@ -145,6 +172,8 @@ html, body, #root, .App {
 main, section {
   flex: 1;
 }
+
+/* Sobre / About section */
 #about {
   background: #fff;
   margin: 50px auto;
