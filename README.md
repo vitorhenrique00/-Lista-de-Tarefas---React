@@ -39,7 +39,7 @@ Um projeto simples desenvolvido em **React** para demonstrar conceitos essenciai
    ```
 5. Ou acessando o link:
    ```bash
-   git clone https://vitorhenrique00.github.io/-Lista-de-Tarefas---React/
+   https://vitorhenrique00.github.io/-Lista-de-Tarefas---React/
    ```
 
 ---
