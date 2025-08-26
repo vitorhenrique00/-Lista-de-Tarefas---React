@@ -37,6 +37,10 @@ Um projeto simples desenvolvido em **React** para demonstrar conceitos essenciai
    ```bash
    npm start
    ```
+5. Ou acessando o link:
+   ```bash
+   git clone https://vitorhenrique00.github.io/-Lista-de-Tarefas---React/
+   ```
 
 ---
 Feito para aprendizado e prática!
