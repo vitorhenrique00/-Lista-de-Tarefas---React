@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/-Lista-de-Tarefas---React/static/css/main.c41e0992.css",
+    "main.js": "/-Lista-de-Tarefas---React/static/js/main.8068c51f.js",
+    "static/media/logo.png": "/-Lista-de-Tarefas---React/static/media/logo.94a00165020df1c0e0ce.png",
+    "index.html": "/-Lista-de-Tarefas---React/index.html",
+    "main.c41e0992.css.map": "/-Lista-de-Tarefas---React/static/css/main.c41e0992.css.map",
+    "main.8068c51f.js.map": "/-Lista-de-Tarefas---React/static/js/main.8068c51f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c41e0992.css",
+    "static/js/main.8068c51f.js"
+  ]
+}
